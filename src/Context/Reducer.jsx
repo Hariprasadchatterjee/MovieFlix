@@ -1,48 +1,18 @@
-export const reducer=(state,action)=>{
 
+
+export const reducer = (state,action) => {
   switch (action.type) {
-    case "set_loading":
-      return{
-        ...state,isLoading:true,
-      }
+    case "setData" :
+     return {...state,hit:action.payLoad}
 
-    case "get_stories":
-     return {
-      ...state,
-      isLoading:false,
-      hits:action.payLoad.apiHits,
-      nbPages:action.payLoad.apiNbPages,
-     }
-     case "remove" :
-      return{
-        ...state,
-        hits:state.hits.filter( (curClickedPost)=>curClickedPost.objectID!==action.payLoad)
-      }
-     case "search" :
-      return{
-        ...state,
-        query:action.payLoad,
-      
-      }
-     case "goPrev" :
-      return{
-        ...state,
-      
-        pages: (state.pages<=0)?state.Pages=0 : state.pages-1,
-      }
-     case "goNext" :
-      return{
-        ...state,
-       
-       pages: (state.nbPages>state.pages+1)? state.pages+1 : state.Pages=0,
-      
-      }
-
+    case "paging" :
+     return {...state,
+      page:(action.payLoad>0 && action.payLoad<=10)? action.payLoad:state.page=1
+    }
   
     default:
       break;
   }
-
   return state;
-
 }
+
