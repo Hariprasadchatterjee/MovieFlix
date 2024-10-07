@@ -29,10 +29,10 @@ export const SharedProvider=({children})=>{
       }
       
     }
-    const handlePaging=(id)=>{
+    const handlePaging=(pageId)=>{
         dispatch({
           type:"paging",
-          payLoad:id
+          payLoad:pageId
         })
     }
 
