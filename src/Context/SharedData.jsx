@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import { reducer } from "./Reducer";
-const API_DATA= `https://dummyjson.com/products?limit=100`
+const API_DATA= `https://dummyjson.com/products?limit=180`
 export const SharedPagination= createContext()
 
 const initialState={
