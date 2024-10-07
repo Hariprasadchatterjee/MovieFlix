@@ -14,8 +14,8 @@ export const SharedProvider=({children})=>{
  
     const getApiData= async (url)=>{
       try {
-        const res = await fetch(url)
-      const data = await res.json();
+        const ress = await fetch(url)
+      const data = await ress.json();
       // console.log(data);
           state.Loading=false
             dispatch({
