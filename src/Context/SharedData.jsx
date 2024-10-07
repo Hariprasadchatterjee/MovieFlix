@@ -41,7 +41,7 @@ export const SharedProvider=({children})=>{
 
   useEffect( ()=>{
     getApiData(API_DATA)
-  },[state.id])
+  },[])
  
   return <SharedPagination.Provider value={{...state,handlePaging}}>{children}</SharedPagination.Provider>
   }
